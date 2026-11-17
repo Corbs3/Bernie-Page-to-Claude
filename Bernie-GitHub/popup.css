@@ -1,0 +1,77 @@
+:root {
+  --mountain: #2B4C7E;
+  --mountain-deep: #1C3459;
+  --snow: #F6F8FB;
+  --fur: #A9622F;
+  --collar: #C8372D;
+  --ink: #1E2430;
+  --soft: #5E6B80;
+  --line: #D6DFEC;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; width: 320px; padding: 16px;
+  font: 14px/1.45 ui-rounded, "SF Pro Rounded", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--snow);
+}
+header { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; color: var(--mountain); }
+.muted { color: var(--soft); font-size: 12.5px; margin: 0; }
+#page-title { max-width: 225px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+fieldset { border: 0; padding: 0; margin: 0 0 14px; }
+legend { font-weight: 600; font-size: 13px; margin-bottom: 6px; padding: 0; }
+
+/* Segmented switches */
+.seg { display: flex; flex-wrap: wrap; }
+.seg legend { width: 100%; }
+.seg label { flex: 1; }
+.seg input { position: absolute; opacity: 0; }
+.seg span {
+  display: block; text-align: center; padding: 8px 4px; font-size: 13px; cursor: pointer;
+  background: #fff; border: 2px solid var(--line); font-weight: 600;
+}
+.seg label:first-of-type span { border-radius: 12px 0 0 12px; border-right-width: 1px; }
+.seg label:last-of-type span { border-radius: 0 12px 12px 0; border-left-width: 1px; }
+.seg label:not(:first-of-type):not(:last-of-type) span { border-left-width: 1px; border-right-width: 1px; }
+.seg input:checked + span { background: var(--mountain); border-color: var(--mountain); color: #fff; }
+.seg input:disabled + span { color: #A9B4C4; cursor: not-allowed; }
+.seg input:focus-visible + span { outline: 3px solid var(--collar); outline-offset: 2px; }
+
+/* Prompt choices */
+#presets label {
+  display: flex; gap: 8px; align-items: center; padding: 7px 10px; margin-bottom: 4px;
+  border-radius: 10px; cursor: pointer;
+}
+#presets label:hover { background: #fff; }
+#presets input { accent-color: var(--mountain); width: 16px; height: 16px; margin: 0; }
+#presets input:focus-visible { outline: 3px solid var(--collar); outline-offset: 2px; }
+
+button { font: inherit; cursor: pointer; border: 0; width: 100%; }
+button:focus-visible { outline: 3px solid var(--collar); outline-offset: 2px; }
+.primary {
+  background: var(--mountain); color: #fff; font-weight: 700; font-size: 16px;
+  padding: 12px; border-radius: 14px; box-shadow: 0 3px 0 var(--mountain-deep);
+  border-bottom: 4px solid var(--collar); /* Bernie's collar */
+}
+.primary:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--mountain-deep); }
+.primary:disabled { opacity: .6; cursor: wait; }
+
+#status { min-height: 1.2em; margin: 8px 0 0; font-size: 13px; }
+#status.error { color: #B03A2E; }
+footer { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 6px; }
+kbd { font: inherit; background: #fff; border: 1px solid var(--line); border-radius: 5px; padding: 0 4px; }
+
+/* Bernie bounces happily when he sets off */
+@keyframes fetch {
+  0% { transform: translateY(0) rotate(0); }
+  30% { transform: translateY(-8px) rotate(-5deg); }
+  55% { transform: translateY(0) rotate(4deg); }
+  80% { transform: translateY(-3px) rotate(-2deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+#dog-body { transform-origin: 50% 90%; display: block; }
+.fetching #dog-body { animation: fetch .6s ease-out; }
+@media (prefers-reduced-motion: reduce) { .fetching #dog-body { animation: none; } }

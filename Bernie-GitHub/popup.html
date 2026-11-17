@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>Bernie</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img id="dog-body" src="icons/mascot.png" width="60" height="60" alt="">
+    <div>
+      <h1>Bernie</h1>
+      <p id="page-title" class="muted">Reading this page…</p>
+    </div>
+  </header>
+
+  <main>
+    <fieldset class="seg" id="mode">
+      <legend>What to send</legend>
+      <label><input type="radio" name="mode" value="page" checked><span>Whole page</span></label>
+      <label><input type="radio" name="mode" value="selection" id="sel-option"><span>Selected text</span></label>
+    </fieldset>
+
+    <fieldset id="presets">
+      <legend>Ask Claude to</legend>
+      <!-- filled in by popup.js -->
+    </fieldset>
+
+    <fieldset class="seg" id="open-in">
+      <legend>Open in</legend>
+      <label><input type="radio" name="openIn" value="browser" checked><span>Browser</span></label>
+      <label><input type="radio" name="openIn" value="app"><span>Mac app</span></label>
+      <label><input type="radio" name="openIn" value="copy"><span>Paste myself</span></label>
+    </fieldset>
+
+    <button id="hop" class="primary">Send to Claude</button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+
+  <footer class="muted">
+    Shortcut: <kbd>⌥</kbd> <kbd>Shift</kbd> <kbd>C</kbd>, or right-click any page.
+  </footer>
+
+  <script src="prompts.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
