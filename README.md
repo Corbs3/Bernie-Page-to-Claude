@@ -1,1 +1,0 @@
-# Bernie-Page-to-Claude
