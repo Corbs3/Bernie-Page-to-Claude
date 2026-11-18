@@ -7,6 +7,7 @@ This policy explains what the Bernie Chrome extension ("Bernie") does with infor
 ## Who publishes Bernie
 
 Bernie is published privately for staff of our organisation through the Chrome Web Store.
+For questions about this policy, contact: **[YOUR CONTACT EMAIL]**
 
 ## The short version
 

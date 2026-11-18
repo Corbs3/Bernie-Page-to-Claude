@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Bernie: Page to Claude",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Bernie fetches any web page and carries it to Claude in one click.",
   "permissions": [
     "activeTab",
@@ -51,5 +51,15 @@
       "run_at": "document_idle"
     }
   ],
-  "short_name": "Bernie"
+  "short_name": "Bernie",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon48.png"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
 }

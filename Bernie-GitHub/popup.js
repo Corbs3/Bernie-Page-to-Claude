@@ -76,13 +76,7 @@ $('#hop').addEventListener('click', async () => {
       : 'Copied. Go to your Claude chat and press ⌘V.');
   }
   const opened = await chrome.runtime.sendMessage({ type: 'open', built: res, target, tabId });
-  if (opened.usedClipboard) {
-    // Long page: give people a moment to read what to do next.
-    setStatus('Long page, so it\'s copied. Press ⌘V in the Claude app.');
-    setTimeout(() => window.close(), 3500);
-  } else {
-    window.close();
-  }
+  window.close(); // a message on the page explains any ⌘V step
 });
 
 

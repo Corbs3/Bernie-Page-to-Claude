@@ -30,3 +30,5 @@ Also works from the right-click menu and the shortcut **⌥ Shift C**.
 1. Download this repo and go to `chrome://extensions`
 2. Turn on **Developer mode**, click **Load unpacked** and pick the folder
 
+## Credits
+Idea by [colleague's name]. Built by Corbs. Mascot created with Gemini.
